@@ -40,7 +40,7 @@ function EventTypesPage() {
                   <h2 className="mt-4 font-display text-3xl md:text-5xl">{t.name}</h2>
                   <p className="mt-5 max-w-xl text-muted-foreground">{t.blurb}</p>
                   <div className="mt-8 flex flex-wrap items-center gap-3">
-                    <Link to="/request-availability" search={{ eventType: t.slug } as never} className="inline-flex items-center gap-2 rounded-full bg-ember px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:shadow-ember">
+                    <Link to="/request-availability" className="inline-flex items-center gap-2 rounded-full bg-ember px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:shadow-ember">
                       Request availability <ArrowUpRight className="h-4 w-4" />
                     </Link>
                     <Link to="/venue-rental" className="inline-flex items-center gap-2 rounded-full ring-hairline px-5 py-2.5 text-sm text-foreground hover:bg-surface">
