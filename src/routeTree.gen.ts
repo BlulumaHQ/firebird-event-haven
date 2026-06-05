@@ -14,6 +14,7 @@ import { Route as VenueRentalRouteImport } from './routes/venue-rental'
 import { Route as UpcomingEventsRouteImport } from './routes/upcoming-events'
 import { Route as PromoteYourEventRouteImport } from './routes/promote-your-event'
 import { Route as PastEventsRouteImport } from './routes/past-events'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as EventTypesRouteImport } from './routes/event-types'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +44,11 @@ const PastEventsRoute = PastEventsRouteImport.update({
   path: '/past-events',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EventTypesRoute = EventTypesRouteImport.update({
   id: '/event-types',
   path: '/event-types',
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/gallery': typeof GalleryRoute
   '/past-events': typeof PastEventsRoute
   '/promote-your-event': typeof PromoteYourEventRoute
   '/upcoming-events': typeof UpcomingEventsRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/gallery': typeof GalleryRoute
   '/past-events': typeof PastEventsRoute
   '/promote-your-event': typeof PromoteYourEventRoute
   '/upcoming-events': typeof UpcomingEventsRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/gallery': typeof GalleryRoute
   '/past-events': typeof PastEventsRoute
   '/promote-your-event': typeof PromoteYourEventRoute
   '/upcoming-events': typeof UpcomingEventsRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/event-types'
+    | '/gallery'
     | '/past-events'
     | '/promote-your-event'
     | '/upcoming-events'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/event-types'
+    | '/gallery'
     | '/past-events'
     | '/promote-your-event'
     | '/upcoming-events'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/event-types'
+    | '/gallery'
     | '/past-events'
     | '/promote-your-event'
     | '/upcoming-events'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   EventTypesRoute: typeof EventTypesRoute
+  GalleryRoute: typeof GalleryRoute
   PastEventsRoute: typeof PastEventsRoute
   PromoteYourEventRoute: typeof PromoteYourEventRoute
   UpcomingEventsRoute: typeof UpcomingEventsRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PastEventsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/event-types': {
       id: '/event-types'
       path: '/event-types'
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   EventTypesRoute: EventTypesRoute,
+  GalleryRoute: GalleryRoute,
   PastEventsRoute: PastEventsRoute,
   PromoteYourEventRoute: PromoteYourEventRoute,
   UpcomingEventsRoute: UpcomingEventsRoute,
