@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VenueSpecificationsRouteImport } from './routes/venue-specifications'
 import { Route as VenueRentalRouteImport } from './routes/venue-rental'
 import { Route as EventTypesRouteImport } from './routes/event-types'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VenueSpecificationsRoute = VenueSpecificationsRouteImport.update({
+  id: '/venue-specifications',
+  path: '/venue-specifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VenueRentalRoute = VenueRentalRouteImport.update({
   id: '/venue-rental',
   path: '/venue-rental',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
   '/venue-rental': typeof VenueRentalRoute
+  '/venue-specifications': typeof VenueSpecificationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
   '/venue-rental': typeof VenueRentalRoute
+  '/venue-specifications': typeof VenueSpecificationsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,30 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
   '/venue-rental': typeof VenueRentalRoute
+  '/venue-specifications': typeof VenueSpecificationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/event-types' | '/venue-rental'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/event-types'
+    | '/venue-rental'
+    | '/venue-specifications'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/event-types' | '/venue-rental'
-  id: '__root__' | '/' | '/about' | '/event-types' | '/venue-rental'
+  to:
+    | '/'
+    | '/about'
+    | '/event-types'
+    | '/venue-rental'
+    | '/venue-specifications'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/event-types'
+    | '/venue-rental'
+    | '/venue-specifications'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +92,18 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   EventTypesRoute: typeof EventTypesRoute
   VenueRentalRoute: typeof VenueRentalRoute
+  VenueSpecificationsRoute: typeof VenueSpecificationsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/venue-specifications': {
+      id: '/venue-specifications'
+      path: '/venue-specifications'
+      fullPath: '/venue-specifications'
+      preLoaderRoute: typeof VenueSpecificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/venue-rental': {
       id: '/venue-rental'
       path: '/venue-rental'
@@ -107,6 +140,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   EventTypesRoute: EventTypesRoute,
   VenueRentalRoute: VenueRentalRoute,
+  VenueSpecificationsRoute: VenueSpecificationsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
