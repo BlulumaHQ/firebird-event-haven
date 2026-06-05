@@ -17,7 +17,9 @@ export function Footer() {
             <MapPin className="mt-0.5 h-4 w-4 text-ember" />
             <span>
               Firebird Entertainment Theatre<br />
-              Richmond, British Columbia, Canada
+              12500 Vickers Way #200<br />
+              Richmond, BC V6V 1H9<br />
+              (604) 719-7906
             </span>
           </p>
         </div>
