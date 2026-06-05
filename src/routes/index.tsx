@@ -69,17 +69,12 @@ function Hero() {
   }, []);
   return (
     <section className="relative min-h-[100svh] overflow-hidden">
-      {/* Background image (video-ready slot) */}
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        poster={heroImg}
-        autoPlay
-        muted
-        loop
-        playsInline
-        aria-hidden="true"
-      />
-      <img src={heroImg} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+      {/*
+        Background image acts as the cinematic plate. When a real hero video
+        becomes available, drop a <video src="..." poster={heroImg} autoPlay muted loop playsInline />
+        above the <img> and the rest of the section keeps working unchanged.
+      */}
+      <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/55 to-background" />
       <div className="absolute inset-0 gradient-radial-ember opacity-50" />
 
