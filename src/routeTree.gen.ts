@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VenueSpecificationsRouteImport } from './routes/venue-specifications'
 import { Route as VenueRentalRouteImport } from './routes/venue-rental'
 import { Route as UpcomingEventsRouteImport } from './routes/upcoming-events'
+import { Route as RequestAvailabilityRouteImport } from './routes/request-availability'
 import { Route as PromoteYourEventRouteImport } from './routes/promote-your-event'
 import { Route as PastEventsRouteImport } from './routes/past-events'
 import { Route as GalleryRouteImport } from './routes/gallery'
@@ -34,6 +35,11 @@ const VenueRentalRoute = VenueRentalRouteImport.update({
 const UpcomingEventsRoute = UpcomingEventsRouteImport.update({
   id: '/upcoming-events',
   path: '/upcoming-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestAvailabilityRoute = RequestAvailabilityRouteImport.update({
+  id: '/request-availability',
+  path: '/request-availability',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PromoteYourEventRoute = PromoteYourEventRouteImport.update({
@@ -86,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/past-events': typeof PastEventsRoute
   '/promote-your-event': typeof PromoteYourEventRoute
+  '/request-availability': typeof RequestAvailabilityRoute
   '/upcoming-events': typeof UpcomingEventsRoute
   '/venue-rental': typeof VenueRentalRoute
   '/venue-specifications': typeof VenueSpecificationsRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/past-events': typeof PastEventsRoute
   '/promote-your-event': typeof PromoteYourEventRoute
+  '/request-availability': typeof RequestAvailabilityRoute
   '/upcoming-events': typeof UpcomingEventsRoute
   '/venue-rental': typeof VenueRentalRoute
   '/venue-specifications': typeof VenueSpecificationsRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/past-events': typeof PastEventsRoute
   '/promote-your-event': typeof PromoteYourEventRoute
+  '/request-availability': typeof RequestAvailabilityRoute
   '/upcoming-events': typeof UpcomingEventsRoute
   '/venue-rental': typeof VenueRentalRoute
   '/venue-specifications': typeof VenueSpecificationsRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/past-events'
     | '/promote-your-event'
+    | '/request-availability'
     | '/upcoming-events'
     | '/venue-rental'
     | '/venue-specifications'
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/past-events'
     | '/promote-your-event'
+    | '/request-availability'
     | '/upcoming-events'
     | '/venue-rental'
     | '/venue-specifications'
@@ -154,6 +165,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/past-events'
     | '/promote-your-event'
+    | '/request-availability'
     | '/upcoming-events'
     | '/venue-rental'
     | '/venue-specifications'
@@ -168,6 +180,7 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   PastEventsRoute: typeof PastEventsRoute
   PromoteYourEventRoute: typeof PromoteYourEventRoute
+  RequestAvailabilityRoute: typeof RequestAvailabilityRoute
   UpcomingEventsRoute: typeof UpcomingEventsRoute
   VenueRentalRoute: typeof VenueRentalRoute
   VenueSpecificationsRoute: typeof VenueSpecificationsRoute
@@ -194,6 +207,13 @@ declare module '@tanstack/react-router' {
       path: '/upcoming-events'
       fullPath: '/upcoming-events'
       preLoaderRoute: typeof UpcomingEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-availability': {
+      id: '/request-availability'
+      path: '/request-availability'
+      fullPath: '/request-availability'
+      preLoaderRoute: typeof RequestAvailabilityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/promote-your-event': {
@@ -264,6 +284,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   PastEventsRoute: PastEventsRoute,
   PromoteYourEventRoute: PromoteYourEventRoute,
+  RequestAvailabilityRoute: RequestAvailabilityRoute,
   UpcomingEventsRoute: UpcomingEventsRoute,
   VenueRentalRoute: VenueRentalRoute,
   VenueSpecificationsRoute: VenueSpecificationsRoute,
