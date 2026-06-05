@@ -7,8 +7,6 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-venue.jpg";
 import exteriorImg from "@/assets/venue-exterior.jpg";
-import lobbyImg from "@/assets/venue-lobby.jpg";
-import stageImg from "@/assets/venue-stage.jpg";
 import { eventTypes } from "@/lib/data/event-types";
 import { upcomingEvents, featuredEvent } from "@/lib/data/events";
 import { testimonials } from "@/lib/data/testimonials";
@@ -547,6 +545,3 @@ function formatDate(iso: string) {
   }
 }
 
-// unused imports referenced for IDEs
-void lobbyImg;
-void stageImg;
