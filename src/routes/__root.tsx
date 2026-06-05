@@ -89,6 +89,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Firebird Entertainment Theatre" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Firebird Entertainment Theatre — Richmond's premier event venue" },
+      { name: "twitter:title", content: "Firebird Entertainment Theatre — Richmond's premier event venue" },
+      { name: "description", content: "Firebird Venue Elite is a premium, modern website showcasing a versatile event destination in Richmond, BC." },
+      { property: "og:description", content: "Firebird Venue Elite is a premium, modern website showcasing a versatile event destination in Richmond, BC." },
+      { name: "twitter:description", content: "Firebird Venue Elite is a premium, modern website showcasing a versatile event destination in Richmond, BC." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/aa56481e-4128-4e47-aca3-a6f47bd1ae85/id-preview-76e42e4f--29da6c4f-c13a-45f6-b0b7-a751b025c8aa.lovable.app-1780619794268.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/aa56481e-4128-4e47-aca3-a6f47bd1ae85/id-preview-76e42e4f--29da6c4f-c13a-45f6-b0b7-a751b025c8aa.lovable.app-1780619794268.png" },
     ],
     links: [
       {
