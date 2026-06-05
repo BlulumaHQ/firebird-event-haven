@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VenueRentalRouteImport } from './routes/venue-rental'
 import { Route as EventTypesRouteImport } from './routes/event-types'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VenueRentalRoute = VenueRentalRouteImport.update({
+  id: '/venue-rental',
+  path: '/venue-rental',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EventTypesRoute = EventTypesRouteImport.update({
   id: '/event-types',
   path: '/event-types',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/venue-rental': typeof VenueRentalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/venue-rental': typeof VenueRentalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/venue-rental': typeof VenueRentalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/event-types'
+  fullPaths: '/' | '/about' | '/event-types' | '/venue-rental'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/event-types'
-  id: '__root__' | '/' | '/about' | '/event-types'
+  to: '/' | '/about' | '/event-types' | '/venue-rental'
+  id: '__root__' | '/' | '/about' | '/event-types' | '/venue-rental'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   EventTypesRoute: typeof EventTypesRoute
+  VenueRentalRoute: typeof VenueRentalRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/venue-rental': {
+      id: '/venue-rental'
+      path: '/venue-rental'
+      fullPath: '/venue-rental'
+      preLoaderRoute: typeof VenueRentalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/event-types': {
       id: '/event-types'
       path: '/event-types'
@@ -89,7 +106,18 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   EventTypesRoute: EventTypesRoute,
+  VenueRentalRoute: VenueRentalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
