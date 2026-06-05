@@ -15,6 +15,7 @@ import { Route as UpcomingEventsRouteImport } from './routes/upcoming-events'
 import { Route as PromoteYourEventRouteImport } from './routes/promote-your-event'
 import { Route as PastEventsRouteImport } from './routes/past-events'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as EventTypesRouteImport } from './routes/event-types'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -49,6 +50,11 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EventTypesRoute = EventTypesRouteImport.update({
   id: '/event-types',
   path: '/event-types',
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/past-events': typeof PastEventsRoute
   '/promote-your-event': typeof PromoteYourEventRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/past-events': typeof PastEventsRoute
   '/promote-your-event': typeof PromoteYourEventRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/past-events': typeof PastEventsRoute
   '/promote-your-event': typeof PromoteYourEventRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/event-types'
+    | '/faq'
     | '/gallery'
     | '/past-events'
     | '/promote-your-event'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/event-types'
+    | '/faq'
     | '/gallery'
     | '/past-events'
     | '/promote-your-event'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/event-types'
+    | '/faq'
     | '/gallery'
     | '/past-events'
     | '/promote-your-event'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   EventTypesRoute: typeof EventTypesRoute
+  FaqRoute: typeof FaqRoute
   GalleryRoute: typeof GalleryRoute
   PastEventsRoute: typeof PastEventsRoute
   PromoteYourEventRoute: typeof PromoteYourEventRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/event-types': {
       id: '/event-types'
       path: '/event-types'
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   EventTypesRoute: EventTypesRoute,
+  FaqRoute: FaqRoute,
   GalleryRoute: GalleryRoute,
   PastEventsRoute: PastEventsRoute,
   PromoteYourEventRoute: PromoteYourEventRoute,
