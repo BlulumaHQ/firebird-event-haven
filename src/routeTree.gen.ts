@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VenueSpecificationsRouteImport } from './routes/venue-specifications'
 import { Route as VenueRentalRouteImport } from './routes/venue-rental'
+import { Route as UpcomingEventsRouteImport } from './routes/upcoming-events'
 import { Route as EventTypesRouteImport } from './routes/event-types'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -23,6 +24,11 @@ const VenueSpecificationsRoute = VenueSpecificationsRouteImport.update({
 const VenueRentalRoute = VenueRentalRouteImport.update({
   id: '/venue-rental',
   path: '/venue-rental',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UpcomingEventsRoute = UpcomingEventsRouteImport.update({
+  id: '/upcoming-events',
+  path: '/upcoming-events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventTypesRoute = EventTypesRouteImport.update({
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/upcoming-events': typeof UpcomingEventsRoute
   '/venue-rental': typeof VenueRentalRoute
   '/venue-specifications': typeof VenueSpecificationsRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/upcoming-events': typeof UpcomingEventsRoute
   '/venue-rental': typeof VenueRentalRoute
   '/venue-specifications': typeof VenueSpecificationsRoute
 }
@@ -60,6 +68,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
+  '/upcoming-events': typeof UpcomingEventsRoute
   '/venue-rental': typeof VenueRentalRoute
   '/venue-specifications': typeof VenueSpecificationsRoute
 }
@@ -69,6 +78,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/event-types'
+    | '/upcoming-events'
     | '/venue-rental'
     | '/venue-specifications'
   fileRoutesByTo: FileRoutesByTo
@@ -76,6 +86,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/event-types'
+    | '/upcoming-events'
     | '/venue-rental'
     | '/venue-specifications'
   id:
@@ -83,6 +94,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/event-types'
+    | '/upcoming-events'
     | '/venue-rental'
     | '/venue-specifications'
   fileRoutesById: FileRoutesById
@@ -91,6 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   EventTypesRoute: typeof EventTypesRoute
+  UpcomingEventsRoute: typeof UpcomingEventsRoute
   VenueRentalRoute: typeof VenueRentalRoute
   VenueSpecificationsRoute: typeof VenueSpecificationsRoute
 }
@@ -109,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/venue-rental'
       fullPath: '/venue-rental'
       preLoaderRoute: typeof VenueRentalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/upcoming-events': {
+      id: '/upcoming-events'
+      path: '/upcoming-events'
+      fullPath: '/upcoming-events'
+      preLoaderRoute: typeof UpcomingEventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/event-types': {
@@ -139,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   EventTypesRoute: EventTypesRoute,
+  UpcomingEventsRoute: UpcomingEventsRoute,
   VenueRentalRoute: VenueRentalRoute,
   VenueSpecificationsRoute: VenueSpecificationsRoute,
 }
