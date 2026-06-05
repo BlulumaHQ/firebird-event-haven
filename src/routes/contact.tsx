@@ -37,9 +37,10 @@ function Contact() {
       <section className="container-page pb-24 md:pb-32">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5 space-y-8">
-            <ContactRow icon={MapPin} label="Visit" value="Richmond, British Columbia, Canada" />
+            <ContactRow icon={MapPin} label="Visit" value="12500 Vickers Way #200, Richmond, BC V6V 1H9" />
             <ContactRow icon={Mail} label="Email" value="events@firebirdtheatre.ca" />
-            <ContactRow icon={Phone} label="Phone" value="+1 (604) 555-0188" />
+            <ContactRow icon={Phone} label="Phone" value="(604) 719-7906" />
+            <ContactRow icon={Clock} label="Hours" value="Mon–Fri 10 a.m. – 5 p.m." />
             <div className="rounded-2xl bg-surface/60 ring-hairline p-6">
               <p className="text-sm text-muted-foreground">For specific date enquiries, use:</p>
               <div className="mt-4 flex flex-wrap gap-3">
