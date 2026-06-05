@@ -403,10 +403,14 @@ function LocationParking() {
             Right in Richmond. Easy to reach. Easy to park.
           </h2>
           <p className="mt-6 max-w-md text-muted-foreground">
-            Firebird sits in the heart of Richmond, BC — moments from YVR International Airport,
-            Skytrain, and the Highway 99 corridor. With over 500 complimentary parking stalls
-            on-site, your guests will never circle the block.
+            Firebird sits at 12500 Vickers Way #200, Richmond, BC — moments from YVR International
+            Airport, Skytrain, and the Highway 99 corridor. With over 500 complimentary parking
+            stalls on-site, your guests will never circle the block.
           </p>
+          <div className="mt-6 space-y-1 text-sm text-muted-foreground">
+            <p><span className="text-foreground">Phone:</span> (604) 719-7906</p>
+            <p><span className="text-foreground">Hours:</span> Mon–Fri 10 a.m. – 5 p.m.</p>
+          </div>
           <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-border/60">
             <div className="bg-background p-5">
               <dt className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Parking</dt>
