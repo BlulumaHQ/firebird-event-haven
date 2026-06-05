@@ -9,8 +9,80 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VenueSpecificationsRouteImport } from './routes/venue-specifications'
+import { Route as VenueRentalRouteImport } from './routes/venue-rental'
+import { Route as UpcomingEventsRouteImport } from './routes/upcoming-events'
+import { Route as RequestAvailabilityRouteImport } from './routes/request-availability'
+import { Route as PromoteYourEventRouteImport } from './routes/promote-your-event'
+import { Route as PastEventsRouteImport } from './routes/past-events'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as EventTypesRouteImport } from './routes/event-types'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BookATourRouteImport } from './routes/book-a-tour'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VenueSpecificationsRoute = VenueSpecificationsRouteImport.update({
+  id: '/venue-specifications',
+  path: '/venue-specifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VenueRentalRoute = VenueRentalRouteImport.update({
+  id: '/venue-rental',
+  path: '/venue-rental',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UpcomingEventsRoute = UpcomingEventsRouteImport.update({
+  id: '/upcoming-events',
+  path: '/upcoming-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RequestAvailabilityRoute = RequestAvailabilityRouteImport.update({
+  id: '/request-availability',
+  path: '/request-availability',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PromoteYourEventRoute = PromoteYourEventRouteImport.update({
+  id: '/promote-your-event',
+  path: '/promote-your-event',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PastEventsRoute = PastEventsRouteImport.update({
+  id: '/past-events',
+  path: '/past-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventTypesRoute = EventTypesRouteImport.update({
+  id: '/event-types',
+  path: '/event-types',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookATourRoute = BookATourRouteImport.update({
+  id: '/book-a-tour',
+  path: '/book-a-tour',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +91,200 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book-a-tour': typeof BookATourRoute
+  '/contact': typeof ContactRoute
+  '/event-types': typeof EventTypesRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/past-events': typeof PastEventsRoute
+  '/promote-your-event': typeof PromoteYourEventRoute
+  '/request-availability': typeof RequestAvailabilityRoute
+  '/upcoming-events': typeof UpcomingEventsRoute
+  '/venue-rental': typeof VenueRentalRoute
+  '/venue-specifications': typeof VenueSpecificationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book-a-tour': typeof BookATourRoute
+  '/contact': typeof ContactRoute
+  '/event-types': typeof EventTypesRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/past-events': typeof PastEventsRoute
+  '/promote-your-event': typeof PromoteYourEventRoute
+  '/request-availability': typeof RequestAvailabilityRoute
+  '/upcoming-events': typeof UpcomingEventsRoute
+  '/venue-rental': typeof VenueRentalRoute
+  '/venue-specifications': typeof VenueSpecificationsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/book-a-tour': typeof BookATourRoute
+  '/contact': typeof ContactRoute
+  '/event-types': typeof EventTypesRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/past-events': typeof PastEventsRoute
+  '/promote-your-event': typeof PromoteYourEventRoute
+  '/request-availability': typeof RequestAvailabilityRoute
+  '/upcoming-events': typeof UpcomingEventsRoute
+  '/venue-rental': typeof VenueRentalRoute
+  '/venue-specifications': typeof VenueSpecificationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/book-a-tour'
+    | '/contact'
+    | '/event-types'
+    | '/faq'
+    | '/gallery'
+    | '/past-events'
+    | '/promote-your-event'
+    | '/request-availability'
+    | '/upcoming-events'
+    | '/venue-rental'
+    | '/venue-specifications'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/book-a-tour'
+    | '/contact'
+    | '/event-types'
+    | '/faq'
+    | '/gallery'
+    | '/past-events'
+    | '/promote-your-event'
+    | '/request-availability'
+    | '/upcoming-events'
+    | '/venue-rental'
+    | '/venue-specifications'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/book-a-tour'
+    | '/contact'
+    | '/event-types'
+    | '/faq'
+    | '/gallery'
+    | '/past-events'
+    | '/promote-your-event'
+    | '/request-availability'
+    | '/upcoming-events'
+    | '/venue-rental'
+    | '/venue-specifications'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BookATourRoute: typeof BookATourRoute
+  ContactRoute: typeof ContactRoute
+  EventTypesRoute: typeof EventTypesRoute
+  FaqRoute: typeof FaqRoute
+  GalleryRoute: typeof GalleryRoute
+  PastEventsRoute: typeof PastEventsRoute
+  PromoteYourEventRoute: typeof PromoteYourEventRoute
+  RequestAvailabilityRoute: typeof RequestAvailabilityRoute
+  UpcomingEventsRoute: typeof UpcomingEventsRoute
+  VenueRentalRoute: typeof VenueRentalRoute
+  VenueSpecificationsRoute: typeof VenueSpecificationsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/venue-specifications': {
+      id: '/venue-specifications'
+      path: '/venue-specifications'
+      fullPath: '/venue-specifications'
+      preLoaderRoute: typeof VenueSpecificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/venue-rental': {
+      id: '/venue-rental'
+      path: '/venue-rental'
+      fullPath: '/venue-rental'
+      preLoaderRoute: typeof VenueRentalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/upcoming-events': {
+      id: '/upcoming-events'
+      path: '/upcoming-events'
+      fullPath: '/upcoming-events'
+      preLoaderRoute: typeof UpcomingEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-availability': {
+      id: '/request-availability'
+      path: '/request-availability'
+      fullPath: '/request-availability'
+      preLoaderRoute: typeof RequestAvailabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/promote-your-event': {
+      id: '/promote-your-event'
+      path: '/promote-your-event'
+      fullPath: '/promote-your-event'
+      preLoaderRoute: typeof PromoteYourEventRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/past-events': {
+      id: '/past-events'
+      path: '/past-events'
+      fullPath: '/past-events'
+      preLoaderRoute: typeof PastEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/event-types': {
+      id: '/event-types'
+      path: '/event-types'
+      fullPath: '/event-types'
+      preLoaderRoute: typeof EventTypesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-a-tour': {
+      id: '/book-a-tour'
+      path: '/book-a-tour'
+      fullPath: '/book-a-tour'
+      preLoaderRoute: typeof BookATourRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +297,19 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BookATourRoute: BookATourRoute,
+  ContactRoute: ContactRoute,
+  EventTypesRoute: EventTypesRoute,
+  FaqRoute: FaqRoute,
+  GalleryRoute: GalleryRoute,
+  PastEventsRoute: PastEventsRoute,
+  PromoteYourEventRoute: PromoteYourEventRoute,
+  RequestAvailabilityRoute: RequestAvailabilityRoute,
+  UpcomingEventsRoute: UpcomingEventsRoute,
+  VenueRentalRoute: VenueRentalRoute,
+  VenueSpecificationsRoute: VenueSpecificationsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
