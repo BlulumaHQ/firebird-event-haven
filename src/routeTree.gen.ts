@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VenueSpecificationsRouteImport } from './routes/venue-specifications'
 import { Route as VenueRentalRouteImport } from './routes/venue-rental'
 import { Route as UpcomingEventsRouteImport } from './routes/upcoming-events'
+import { Route as PromoteYourEventRouteImport } from './routes/promote-your-event'
 import { Route as PastEventsRouteImport } from './routes/past-events'
 import { Route as EventTypesRouteImport } from './routes/event-types'
 import { Route as AboutRouteImport } from './routes/about'
@@ -30,6 +31,11 @@ const VenueRentalRoute = VenueRentalRouteImport.update({
 const UpcomingEventsRoute = UpcomingEventsRouteImport.update({
   id: '/upcoming-events',
   path: '/upcoming-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PromoteYourEventRoute = PromoteYourEventRouteImport.update({
+  id: '/promote-your-event',
+  path: '/promote-your-event',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PastEventsRoute = PastEventsRouteImport.update({
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
   '/past-events': typeof PastEventsRoute
+  '/promote-your-event': typeof PromoteYourEventRoute
   '/upcoming-events': typeof UpcomingEventsRoute
   '/venue-rental': typeof VenueRentalRoute
   '/venue-specifications': typeof VenueSpecificationsRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
   '/past-events': typeof PastEventsRoute
+  '/promote-your-event': typeof PromoteYourEventRoute
   '/upcoming-events': typeof UpcomingEventsRoute
   '/venue-rental': typeof VenueRentalRoute
   '/venue-specifications': typeof VenueSpecificationsRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/event-types': typeof EventTypesRoute
   '/past-events': typeof PastEventsRoute
+  '/promote-your-event': typeof PromoteYourEventRoute
   '/upcoming-events': typeof UpcomingEventsRoute
   '/venue-rental': typeof VenueRentalRoute
   '/venue-specifications': typeof VenueSpecificationsRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/event-types'
     | '/past-events'
+    | '/promote-your-event'
     | '/upcoming-events'
     | '/venue-rental'
     | '/venue-specifications'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/event-types'
     | '/past-events'
+    | '/promote-your-event'
     | '/upcoming-events'
     | '/venue-rental'
     | '/venue-specifications'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/event-types'
     | '/past-events'
+    | '/promote-your-event'
     | '/upcoming-events'
     | '/venue-rental'
     | '/venue-specifications'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   EventTypesRoute: typeof EventTypesRoute
   PastEventsRoute: typeof PastEventsRoute
+  PromoteYourEventRoute: typeof PromoteYourEventRoute
   UpcomingEventsRoute: typeof UpcomingEventsRoute
   VenueRentalRoute: typeof VenueRentalRoute
   VenueSpecificationsRoute: typeof VenueSpecificationsRoute
@@ -142,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/upcoming-events'
       fullPath: '/upcoming-events'
       preLoaderRoute: typeof UpcomingEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/promote-your-event': {
+      id: '/promote-your-event'
+      path: '/promote-your-event'
+      fullPath: '/promote-your-event'
+      preLoaderRoute: typeof PromoteYourEventRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/past-events': {
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   EventTypesRoute: EventTypesRoute,
   PastEventsRoute: PastEventsRoute,
+  PromoteYourEventRoute: PromoteYourEventRoute,
   UpcomingEventsRoute: UpcomingEventsRoute,
   VenueRentalRoute: VenueRentalRoute,
   VenueSpecificationsRoute: VenueSpecificationsRoute,
