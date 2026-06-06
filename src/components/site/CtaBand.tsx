@@ -1,10 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-venue.jpg";
+import heroImg from "@/assets/firebird-hero.webp.asset.json";
 
 export function CtaBand() {
   return (
     <section className="relative overflow-hidden">
-      <img src={heroImg} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-40" />
+      <img src={heroImg.url} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-40" />
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background/70 to-background" />
       <div className="container-page relative py-24 md:py-32">
         <div className="max-w-3xl">
