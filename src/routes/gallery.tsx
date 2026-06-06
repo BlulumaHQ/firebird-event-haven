@@ -34,7 +34,8 @@ function Gallery() {
     <>
       <PageHero eyebrow="Gallery" title="Inside the room." subtitle="A visual walk through Firebird — the space, the people, and the events." />
 
-      <section className="container-page pb-24 md:pb-32">
+      <section className="section-cream">
+      <div className="container-page pb-24 pt-24 md:pb-32 md:pt-32">
         <div className="mb-10 flex flex-wrap gap-2">
           {filters.map((f) => (
             <button
@@ -58,6 +59,7 @@ function Gallery() {
             </figure>
           ))}
         </div>
+      </div>
       </section>
 
       <CtaBand />
