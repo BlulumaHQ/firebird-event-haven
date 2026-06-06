@@ -25,7 +25,8 @@ function Past() {
         subtitle="A small sample of the productions that have called Firebird home."
       />
 
-      <section className="container-page pb-24 md:pb-32">
+      <section className="section-cream">
+      <div className="container-page pb-24 pt-24 md:pb-32 md:pt-32">
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {events.map((e) => (
             <li key={e.id} className="group overflow-hidden rounded-2xl ring-hairline">
@@ -41,6 +42,7 @@ function Past() {
             </li>
           ))}
         </ul>
+      </div>
       </section>
 
       <CtaBand />
