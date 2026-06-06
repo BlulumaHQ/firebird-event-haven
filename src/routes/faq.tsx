@@ -20,7 +20,8 @@ function FaqPage() {
     <>
       <PageHero eyebrow="FAQ" title="The most common questions, answered." subtitle="Can't find what you're looking for? Reach out to our events team — we typically respond within one business day." />
 
-      <section className="container-page pb-24 md:pb-32">
+      <section className="section-cream">
+      <div className="container-page pb-24 pt-24 md:pb-32 md:pt-32">
         <div className="mx-auto max-w-3xl divide-y divide-border/60 border-y border-border/60">
           {faqs.map((f) => (
             <details key={f.q} className="group py-6">
@@ -34,6 +35,7 @@ function FaqPage() {
             </details>
           ))}
         </div>
+      </div>
       </section>
 
       <CtaBand />
