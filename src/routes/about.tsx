@@ -52,7 +52,7 @@ function About() {
         </div>
       </section>
 
-      <section className="border-y border-border/60 bg-surface/30">
+      <section className="section-cream border-y border-border/60">
         <div className="container-page grid items-center gap-12 py-20 md:grid-cols-2">
           <div className="overflow-hidden rounded-2xl ring-hairline">
             <img src={exterior} alt="Firebird exterior" loading="lazy" className="h-full w-full object-cover" />
