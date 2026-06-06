@@ -7,7 +7,7 @@ export function Logo({ className = "" }: { className?: string }) {
       <img
         src={logoAsset.url}
         alt="Firebird Entertainment Theatre"
-        className="h-10 w-auto md:h-11 transition-opacity group-hover:opacity-90"
+        className="h-14 w-auto md:h-16 transition-opacity group-hover:opacity-90"
       />
     </Link>
   );
