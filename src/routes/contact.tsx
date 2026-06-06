@@ -3,7 +3,7 @@ import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { submitLead } from "@/lib/integrations/crm";
-import logoSquare from "@/assets/logo-square.png.asset.json";
+import logoOnDark from "@/assets/logo-on-dark.png.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -38,11 +38,15 @@ function Contact() {
       <section className="container-page pb-24 md:pb-32">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5 space-y-8">
-            <div className="overflow-hidden rounded-2xl ring-hairline">
+            <div
+              className="relative flex aspect-square w-full max-w-sm items-center justify-center overflow-hidden rounded-2xl p-10"
+              style={{ backgroundColor: "#3f0d0d" }}
+            >
+              <div className="absolute inset-0 bg-diagonal-stripes opacity-40" />
               <img
-                src={logoSquare.url}
+                src={logoOnDark.url}
                 alt="Firebird Entertainment Theatre"
-                className="aspect-square w-full max-w-sm object-cover"
+                className="relative w-full max-w-[80%] object-contain"
               />
             </div>
             <ContactRow icon={MapPin} label="Visit" value="12500 Vickers Way #200, Richmond, BC V6V 1H9" />

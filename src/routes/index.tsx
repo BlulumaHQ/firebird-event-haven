@@ -163,7 +163,7 @@ function WhyFirebird() {
 /* ---------- Event Types Grid ---------- */
 function EventTypesGrid() {
   return (
-    <section className="relative border-y border-border/60 bg-surface/30">
+    <section className="relative border-y border-border/60 bg-surface/30 bg-diagonal-stripes">
       <div className="container-page py-24 md:py-32">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -277,7 +277,7 @@ function PromoteSection() {
     { icon: Mic, title: "Event Spotlights", body: "In-depth organizer interviews and behind-the-scenes content." },
   ];
   return (
-    <section className="relative overflow-hidden border-y border-border/60 bg-surface/30">
+    <section className="relative overflow-hidden border-y border-border/60 bg-surface/30 bg-diagonal-stripes">
       <div className="container-page grid gap-16 py-24 md:grid-cols-12 md:py-32">
         <div className="md:col-span-5">
           <p className="text-xs uppercase tracking-[0.3em] text-ember">Promote your event</p>
