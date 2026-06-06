@@ -29,7 +29,10 @@ export function PageHero({
       )}
       <div className="container-page relative">
         {eyebrow && (
-          <p className="mb-6 text-xs uppercase tracking-[0.3em] text-ember">{eyebrow}</p>
+          <p className="mb-6 inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-ember">
+            <span aria-hidden="true" className="inline-block h-px w-8 bg-gold" />
+            {eyebrow}
+          </p>
         )}
         <h1 className="font-display text-balance text-5xl leading-[1.02] text-foreground md:text-7xl">
           {title}
