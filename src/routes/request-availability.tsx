@@ -35,7 +35,8 @@ function RequestAvailability() {
         subtitle="Tell us about your event. Our team will respond within one business day with confirmed availability, pricing guidance, and recommended configurations."
       />
 
-      <section className="container-page pb-24 md:pb-32">
+      <section className="section-cream">
+      <div className="container-page pb-24 pt-24 md:pb-32 md:pt-32">
         <div className="grid gap-12 md:grid-cols-12">
           <aside className="md:col-span-4">
             <div className="rounded-2xl bg-surface/60 ring-hairline p-6">
@@ -105,6 +106,7 @@ function RequestAvailability() {
             )}
           </div>
         </div>
+      </div>
       </section>
     </>
   );

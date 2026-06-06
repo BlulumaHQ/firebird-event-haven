@@ -35,7 +35,8 @@ function BookATour() {
         image={lobby}
       />
 
-      <section className="container-page pb-24 md:pb-32">
+      <section className="section-cream">
+      <div className="container-page pb-24 pt-24 md:pb-32 md:pt-32">
         <div className="mx-auto max-w-3xl">
           {sent ? (
             <div className="rounded-2xl bg-surface ring-hairline p-12 text-center">
@@ -66,6 +67,7 @@ function BookATour() {
             </form>
           )}
         </div>
+      </div>
       </section>
     </>
   );

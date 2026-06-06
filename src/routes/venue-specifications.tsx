@@ -114,7 +114,8 @@ function Specs() {
         image={stage}
       />
 
-      <section className="container-page pb-24 md:pb-32">
+      <section className="section-cream">
+      <div className="container-page pb-24 pt-24 md:pb-32 md:pt-32">
         <div className="grid gap-px overflow-hidden rounded-2xl bg-border/60 md:grid-cols-2">
           {specs.map(({ icon: Icon, title, rows }) => (
             <div key={title} className="bg-surface p-8">
@@ -133,6 +134,7 @@ function Specs() {
             </div>
           ))}
         </div>
+      </div>
       </section>
 
       <CtaBand />

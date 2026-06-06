@@ -92,7 +92,7 @@ function VenueRental() {
         </div>
       </section>
 
-      <section className="border-y border-border/60 bg-surface/30">
+      <section className="section-cream border-y border-border/60">
         <div className="container-page grid gap-12 py-24 md:grid-cols-12">
           <div className="md:col-span-5">
             <p className="text-xs uppercase tracking-[0.3em] text-ember">What's included</p>

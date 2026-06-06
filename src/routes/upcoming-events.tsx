@@ -31,7 +31,8 @@ function Upcoming() {
         </div>
       </PageHero>
 
-      <section className="container-page pb-24 md:pb-32">
+      <section className="section-cream">
+      <div className="container-page pb-24 pt-24 md:pb-32 md:pt-32">
         <ul className="divide-y divide-border/60 border-y border-border/60">
           {events.map((e) => (
             <li key={e.id} className="group grid items-center gap-6 py-8 md:grid-cols-12 md:gap-10">
@@ -68,6 +69,7 @@ function Upcoming() {
         <p className="mt-10 text-sm text-muted-foreground">
           Organizing an event? <Link to="/request-availability" className="text-ember hover:underline">Request availability →</Link>
         </p>
+      </div>
       </section>
 
       <CtaBand />
