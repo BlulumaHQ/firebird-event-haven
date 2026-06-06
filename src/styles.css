@@ -77,9 +77,12 @@
   --popover-foreground: oklch(0.96 0.012 80);
 
   /* Ember (primary accent) — warm orange */
-  --primary: oklch(0.68 0.18 45);
-  --primary-foreground: oklch(0.13 0.005 60);
-  --ember: oklch(0.68 0.18 45);
+  /* Ember = brand maroon (#3f0d0d, slightly brightened for legibility on dark) */
+  --primary: oklch(0.36 0.13 25);
+  --primary-foreground: oklch(0.96 0.025 80);
+  --ember: oklch(0.46 0.16 25);
+  --brand: oklch(0.30 0.11 25);
+  --cream: oklch(0.96 0.025 80);
 
   /* Gold (secondary accent) */
   --gold: oklch(0.78 0.13 80);
@@ -96,7 +99,7 @@
 
   --border: oklch(0.28 0.008 60);
   --input: oklch(0.24 0.008 60);
-  --ring: oklch(0.68 0.18 45);
+  --ring: oklch(0.46 0.16 25);
 
   --chart-1: oklch(0.68 0.18 45);
   --chart-2: oklch(0.78 0.13 80);
@@ -166,6 +169,29 @@
   }
   .ring-hairline {
     box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--foreground) 8%, transparent);
+  }
+
+  /* Section-level theme override: warm cream surface with maroon ink.
+   * Apply to <section className="section-cream"> to flip a band light. */
+  .section-cream {
+    --background: oklch(0.96 0.025 80);
+    --foreground: oklch(0.22 0.05 28);
+    --surface: oklch(0.92 0.028 78);
+    --surface-elevated: oklch(0.88 0.030 78);
+    --card: oklch(0.92 0.028 78);
+    --card-foreground: oklch(0.22 0.05 28);
+    --muted: oklch(0.90 0.022 78);
+    --muted-foreground: oklch(0.42 0.05 30);
+    --border: oklch(0.82 0.030 70);
+    --input: oklch(0.86 0.028 75);
+    --primary: oklch(0.30 0.11 25);
+    --primary-foreground: oklch(0.96 0.025 80);
+    --ember: oklch(0.30 0.11 25);
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  .section-cream .ring-hairline {
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--foreground) 12%, transparent);
   }
 }
 
