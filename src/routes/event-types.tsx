@@ -25,7 +25,8 @@ function EventTypesPage() {
         subtitle="Firebird's hall is designed to host the widest range of events in Richmond — and to make every one of them feel like the only thing happening in the city that night."
       />
 
-      <section className="container-page pb-24 md:pb-32">
+      <section className="section-cream">
+      <div className="container-page pb-24 pt-24 md:pb-32 md:pt-32">
         <ul className="space-y-px overflow-hidden rounded-2xl bg-border/60">
           {eventTypes.map((t, idx) => (
             <li id={t.slug} key={t.slug} className="group bg-background">
@@ -52,6 +53,7 @@ function EventTypesPage() {
             </li>
           ))}
         </ul>
+      </div>
       </section>
 
       <CtaBand />
