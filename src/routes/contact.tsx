@@ -3,7 +3,6 @@ import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { submitLead } from "@/lib/integrations/crm";
-import logoOnDark from "@/assets/logo-on-dark.png.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -44,7 +43,7 @@ function Contact() {
             >
               <div className="absolute inset-0 bg-diagonal-stripes opacity-40" />
               <img
-                src={logoOnDark.url}
+                src="/images/logo-on-dark.png"
                 alt="Firebird Entertainment Theatre"
                 className="relative w-full max-w-[80%] object-contain"
               />
