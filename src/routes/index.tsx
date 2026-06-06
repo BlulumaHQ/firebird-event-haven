@@ -5,7 +5,7 @@ import {
   Lightbulb, Volume2, Armchair, Accessibility, DoorOpen, ChevronRight,
   Megaphone, Star, Newspaper, Share2, ChevronLeft,
 } from "lucide-react";
-import heroImg from "@/assets/hero-venue.jpg";
+import heroAsset from "@/assets/firebird-hero.webp.asset.json";
 import exteriorImg from "@/assets/venue-exterior.jpg";
 import { eventTypes } from "@/lib/data/event-types";
 import { upcomingEvents, featuredEvent } from "@/lib/data/events";
@@ -74,7 +74,7 @@ function Hero() {
         becomes available, drop a <video src="..." poster={heroImg} autoPlay muted loop playsInline />
         above the <img> and the rest of the section keeps working unchanged.
       */}
-      <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={heroAsset.url} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/55 to-background" />
       <div className="absolute inset-0 gradient-radial-ember opacity-50" />
 
