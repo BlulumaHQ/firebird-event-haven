@@ -171,6 +171,25 @@
     box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--foreground) 8%, transparent);
   }
 
+  /* Subtle diagonal stripe background — works on both dark and cream sections.
+   * Use on a wrapper to add quiet texture. */
+  .bg-diagonal-stripes {
+    background-image: repeating-linear-gradient(
+      135deg,
+      transparent 0 22px,
+      color-mix(in oklab, var(--foreground) 5%, transparent) 22px 23px,
+      transparent 23px 46px,
+      color-mix(in oklab, var(--foreground) 3%, transparent) 46px 47px
+    );
+  }
+  .bg-diagonal-stripes-strong {
+    background-image: repeating-linear-gradient(
+      135deg,
+      transparent 0 18px,
+      color-mix(in oklab, var(--foreground) 8%, transparent) 18px 19px
+    );
+  }
+
   /* Section-level theme override: warm cream surface with maroon ink.
    * Apply to <section className="section-cream"> to flip a band light. */
   .section-cream {
