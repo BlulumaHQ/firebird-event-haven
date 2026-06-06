@@ -130,7 +130,8 @@ function WhyFirebird() {
     { icon: LayoutGrid, title: "Flexible Event Configurations", body: "Theatre, banquet, classroom, cabaret, reception — reconfigure the room around your event." },
   ];
   return (
-    <section className="container-page py-24 md:py-32">
+    <section className="section-cream">
+    <div className="container-page py-24 md:py-32">
       <div className="grid gap-14 md:grid-cols-12">
         <div className="md:col-span-5">
           <p className="text-xs uppercase tracking-[0.3em] text-ember">Why Firebird</p>
@@ -154,6 +155,7 @@ function WhyFirebird() {
           </ul>
         </div>
       </div>
+    </div>
     </section>
   );
 }
@@ -325,7 +327,8 @@ function VenueOverview() {
     { icon: DoorOpen, title: "Backstage", body: "Multiple dressing rooms, green room, and dedicated load-in dock." },
   ];
   return (
-    <section className="container-page py-24 md:py-32">
+    <section className="section-cream">
+    <div className="container-page py-24 md:py-32">
       <div className="grid items-end gap-10 md:grid-cols-12">
         <div className="md:col-span-7">
           <p className="text-xs uppercase tracking-[0.3em] text-ember">Venue Overview</p>
@@ -358,6 +361,7 @@ function VenueOverview() {
           </div>
         ))}
       </div>
+    </div>
     </section>
   );
 }
