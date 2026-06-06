@@ -327,7 +327,8 @@ function VenueOverview() {
     { icon: DoorOpen, title: "Backstage", body: "Multiple dressing rooms, green room, and dedicated load-in dock." },
   ];
   return (
-    <section className="container-page py-24 md:py-32">
+    <section className="section-cream">
+    <div className="container-page py-24 md:py-32">
       <div className="grid items-end gap-10 md:grid-cols-12">
         <div className="md:col-span-7">
           <p className="text-xs uppercase tracking-[0.3em] text-ember">Venue Overview</p>
@@ -360,6 +361,7 @@ function VenueOverview() {
           </div>
         ))}
       </div>
+    </div>
     </section>
   );
 }
