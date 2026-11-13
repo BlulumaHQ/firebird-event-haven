@@ -104,7 +104,7 @@ export function Footer() {
 
       <div className="border-t border-border/60">
         <div className="container-page flex flex-col items-start justify-between gap-4 py-6 text-xs text-muted-foreground md:flex-row md:items-center">
-          <p>© {year} Firebird Entertainment Theatre. All rights reserved.</p>
+          <p>© {year} Firebird Entertainment Theatre. All rights reserved. | Web Design by{" "}<a href="https://sonykundesign.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-80">Sonykun Design</a></p>
           <div className="flex items-center gap-5">
             <Link to="/faq" className="hover:text-foreground">FAQ</Link>
             <Link to="/about" className="hover:text-foreground">About</Link>
